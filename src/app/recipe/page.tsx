@@ -1,9 +1,9 @@
 "use client";
 import React, { useEffect } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import FilterByIngredent from "@/app/category/filterByIngredent/page";
-import FilterByCategory from "@/app/category/filterByCategory/page";
-import FilterByArea from "@/app/category/filterByArea/page";
+import FilterByIngredent from "@/app/recipe/filterByIngredent/page";
+import FilterByCategory from "@/app/recipe/filterByCategory/page";
+import FilterByArea from "@/app/recipe/filterByArea/page";
 
 function Home() {
   useEffect(() => {
@@ -14,7 +14,7 @@ function Home() {
     document.body.appendChild(instagramScript);
 
     // Load TikTok embed script
-    const tiktokScript = document.createElement('script');
+    const tiktokScript = document.createElement("script");
     tiktokScript.src = "https://www.tiktok.com/embed.js";
     tiktokScript.async = true;
     document.body.appendChild(tiktokScript);
@@ -29,30 +29,18 @@ function Home() {
           <TabsTrigger value="area">By Area</TabsTrigger>
         </TabsList>
         <TabsContent value="ingredient">
-          <div className="flex flex-col">
-            <FilterByIngredent />
-          </div>
+          <FilterByIngredent />
         </TabsContent>
         <TabsContent value="category">
-          <div className="flex flex-col">
-            <p className="text-muted-foreground mb-4">
-              Find recipes based on main ingredients
-            </p>
-            <FilterByCategory />
-          </div>
+          <FilterByCategory />
         </TabsContent>
         <TabsContent value="area">
-          <div className="flex flex-col">
-            <p className="text-muted-foreground mb-4">
-              Find recipes based on main ingredients
-            </p>
-            <FilterByArea />
-          </div>
+          <FilterByArea />
         </TabsContent>
       </Tabs>
 
       {/* Instagram Embed */}
-      <div className="instagram-embed">
+      {/* <div className="instagram-embed">
         <blockquote
           className="instagram-media"
           data-instgrm-captioned
@@ -112,24 +100,7 @@ function Home() {
       </div>
 
       {/* TikTok Embed */}
-      <blockquote className="tiktok-embed" 
-                cite="https://www.tiktok.com/@toughcorner/video/7251936780046421266" 
-                data-video-id="7251936780046421266" 
-                style={{ maxWidth: '605px', minWidth: '325px' }}>
-        <section>
-          <a target="_blank" 
-             title="@toughcorner" 
-             href="https://www.tiktok.com/@toughcorner?refer=embed">@toughcorner</a>
-          Financial Management | Is It All About Money? 💰 Comment what you think
-          <a title="motivation" 
-             target="_blank" 
-             href="https://www.tiktok.com/tag/motivation?refer=embed">#motivation</a>
-          {/* More content */}
-          <a target="_blank" 
-             title="♬ original sound  - Tough Corner" 
-             href="https://www.tiktok.com/music/original-sound-Tough-Corner-7251936876616010498?refer=embed">♬ original sound - Tough Corner</a>
-        </section>
-      </blockquote>
+    
     </main>
   );
 }

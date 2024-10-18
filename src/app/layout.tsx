@@ -24,8 +24,8 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <NavBar />
           <div className="flex flex-col min-h-screen bg-light_mode  dark:bg-dark_mode  px-4 ">
-            <NavBar />
             <main className="flex-grow ">{children}</main>
             <FooterComp />
           </div>

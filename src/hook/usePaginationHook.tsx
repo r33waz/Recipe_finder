@@ -2,8 +2,9 @@ import { useState } from "react";
 
 // Define the type for the data items
 interface PaginatedItem {
-  id: number;
-  name: string;
+  idMeal: number;
+  strMealThumb: string;
+  strMeal:string
 }
 
 // Define the return type of the custom hook
